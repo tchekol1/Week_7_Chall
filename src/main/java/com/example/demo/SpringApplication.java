@@ -16,11 +16,11 @@ public class SpringApplication {
   public CommandLineRunner run(UserRepository userRepository, RoleRepository roleRepository) throws Exception {
     return (String[] args) -> {
 
-      roleRepository.save(new Role("ROLE_USER"));
-      roleRepository.save(new Role("ROLE_ADMIN"));
+      roleRepository.save(new Role("USER"));
+      roleRepository.save(new Role("ADMIN"));
 
-      Role adminRole = roleRepository.findByRole("ROLE_USER");
-      Role userRole = roleRepository.findByRole("ROLE_ADMIN");
+      Role adminRole = roleRepository.findByRole("USER");
+      Role userRole = roleRepository.findByRole("ADMIN");
 
       User user = new User("jim@jim.com", "password", "Jim", "Jimmerson", true,
               "jim");
